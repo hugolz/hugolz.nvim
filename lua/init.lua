@@ -58,7 +58,8 @@ require('lazy').setup({
   -- Adds git releated signs to the gutter, as well as utilities for managing changes
   require 'plugins.gitsigns',
 
-  { -- Theme inspired by Atom
+  {
+    -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
@@ -92,7 +93,10 @@ require('lazy').setup({
   require 'plugins.autoformat',
 
   -- File tree
-  require 'plugins.nvim_tree'
+  require 'plugins.nvim_tree',
+
+  -- display buffers in the bottom bar
+  require 'plugins.bufferline',
 
   -- require 'kickstart.plugins.debug',
 
@@ -193,3 +197,4 @@ require("keymaps.nvim_tree")
 
 
 --
+
