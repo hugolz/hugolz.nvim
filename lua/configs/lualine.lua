@@ -1,6 +1,5 @@
 -- Bubbles config for lualine
 -- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
 
 -- stylua: ignore
 local colors = {
@@ -19,11 +18,9 @@ local bubbles_theme = {
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
   },
-
   insert = { a = { fg = colors.black, bg = colors.blue } },
   visual = { a = { fg = colors.black, bg = colors.cyan } },
   replace = { a = { fg = colors.black, bg = colors.red } },
-
   inactive = {
     a = { fg = colors.white, bg = colors.black },
     b = { fg = colors.white, bg = colors.black },

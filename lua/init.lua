@@ -168,7 +168,7 @@ require("configs.lsp")
 require("configs.cmp")
 require("configs.lualine")
 require("configs.nvim_tree")
-
+require("configs.bufferline")
 ---------------------------------------
 --              Keymaps              --
 ---------------------------------------
@@ -184,6 +184,11 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Simple keymaps to manage buffers
+vim.keymap.set('n', '<leader>x', "<cmd> bdelete <CR>", { desc = "Close the current buffer" })
+vim.keymap.set('n', '<TAB>', "<cmd> bnext <CR>", { desc = "Switch to the next buffer" })
+vim.keymap.set('n', '<S-TAB>', "<cmd> bprevious <CR>", { desc = "Switch to the previous buffer" })
+
 ---- telescope keymaps
 require("keymaps.telescope")
 
@@ -192,9 +197,3 @@ require("keymaps.diagnostic")
 
 -- nvimtree keymaps
 require("keymaps.nvim_tree")
-
-
-
-
---
-

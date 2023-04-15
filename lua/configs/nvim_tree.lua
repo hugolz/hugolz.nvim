@@ -34,36 +34,41 @@ local options = {
     root_folder_label = false,
     highlight_git = false,
     highlight_opened_files = "all",
-
     indent_markers = {
       enable = false,
     },
-
     icons = {
+      webdev_colors = true,
+      git_placement = "before",
+      modified_placement = "after",
+      padding = " ",
+      symlink_arrow = " ➛ ",
       show = {
         file = true,
         folder = true,
         folder_arrow = true,
-        git = false,
+        git = true,
+        modified = true,
       },
-
       glyphs = {
         default = "",
         symlink = "",
+        bookmark = "",
+        modified = "●",
         folder = {
-          default = "",
-          empty = "",
-          empty_open = "",
-          open = "",
-          symlink = "",
-          symlink_open = "",
-          arrow_open = "",
           arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
         },
         git = {
           unstaged = "✗",
           staged = "✓",
-          unmerged = "",
+          unmerged = "",
           renamed = "➜",
           untracked = "★",
           deleted = "",
@@ -75,5 +80,3 @@ local options = {
 }
 require("nvim-tree").setup(options)
 vim.g.nvimtree_side = options.view.side
-
-
