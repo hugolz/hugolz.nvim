@@ -98,6 +98,8 @@ require('lazy').setup({
   -- display buffers in the bottom bar
   require 'plugins.bufferline',
 
+  -- Toggle nvim transparency
+  require("plugins.transparent")
   -- require 'kickstart.plugins.debug',
 
   -- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -112,6 +114,9 @@ require('lazy').setup({
   ---- CHECK AND REMOVE THIS
   -- { import = 'custom.plugins' },
 }, {})
+
+-- Some plugins that should not be lazy loaded
+
 
 ---------------------------------------
 --             Some vars             -- NEED FIX
@@ -169,6 +174,8 @@ require("configs.cmp")
 require("configs.lualine")
 require("configs.nvim_tree")
 require("configs.bufferline")
+require("configs.transparent")
+
 ---------------------------------------
 --              Keymaps              --
 ---------------------------------------
