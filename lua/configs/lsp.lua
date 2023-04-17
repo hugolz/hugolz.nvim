@@ -77,6 +77,27 @@ mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
 
+-- mason_lspconfig.setup_handlers {
+--   function(server_name)
+--     require('lspconfig')[server_name].setup {
+--       capabilities = capabilities,
+--       on_attach = on_attach,
+--       settings = servers[server_name],
+--     }
+--   end,
+-- }
+
+-- First working options of rust-tools
+-- local rt = require("rust-tools")
+--
+-- rt.setup({
+--   server = {
+--     on_attach = function(_, bufnr)
+--       vim.keymap.set('n', "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+--       vim.keymap.set('n', "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+--     end,
+--   }
+-- })
 mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
@@ -85,4 +106,8 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
     }
   end,
+  ["rust_analyzer"] = function()
+    require("rust-tools").setup {}
+  end
 }
+

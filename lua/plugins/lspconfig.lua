@@ -1,10 +1,10 @@
 -- NOTE: This is where your plugins related to LSP can be installed.
 --  The configuration is done below. Search for lspconfig to find it below.
-return {
+--[[ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
-    { 'williamboman/mason.nvim', config = true },
+   { 'williamboman/mason.nvim', config = true },
     'williamboman/mason-lspconfig.nvim',
 
     -- Useful status updates for LSP
@@ -14,4 +14,16 @@ return {
     -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
   },
+} ]]
+return {
+  'neovim/nvim-lspconfig',
+  
+  { 'williamboman/mason.nvim', config = true },
+  'williamboman/mason-lspconfig.nvim',
+
+
+  { 'j-hui/fidget.nvim', opts = {} },
+  'folke/neodev.nvim',
+  'simrat39/rust-tools.nvim'
 }
+

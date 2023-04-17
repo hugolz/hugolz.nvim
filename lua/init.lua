@@ -8,6 +8,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+
 ---------------------------------------
 --          Preinit plugins          --
 ---------------------------------------
@@ -45,12 +46,18 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
+  
   -- LSP Configuration & Plugins
-  require 'plugins.lspconfig',
+  require 'plugins.lspconfig', 
 
   -- Autocompletion
   require 'plugins.cmp',
+  
+  -- close {, (, ", ', when opening them
+  require 'plugins.auto_pairs',
+  
+  -- rust Cargo toml crate addons
+  require 'plugins.crates',
 
   -- Useful plugin to show you pending keybinds.
   require 'plugins.which_key',
@@ -175,6 +182,7 @@ require("configs.lualine")
 require("configs.nvim_tree")
 require("configs.bufferline")
 require("configs.transparent")
+require("configs.crates")
 
 ---------------------------------------
 --              Keymaps              --
