@@ -65,15 +65,8 @@ require('lazy').setup({
   -- Adds git releated signs to the gutter, as well as utilities for managing changes
   require 'plugins.gitsigns',
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
+  require 'plugins.theme',
+  
   -- Set lualine as statusline
   require 'plugins.lualine',
 
@@ -183,6 +176,7 @@ require("configs.nvim_tree")
 require("configs.bufferline")
 require("configs.transparent")
 require("configs.crates")
+require("configs.theme")
 
 ---------------------------------------
 --              Keymaps              --
