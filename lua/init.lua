@@ -7,7 +7,8 @@
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
+vim.opt.wrap = false
+vim.opt.textwidth = 80
 
 ---------------------------------------
 --          Preinit plugins          --
@@ -46,16 +47,16 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-  
+
   -- LSP Configuration & Plugins
-  require 'plugins.lspconfig', 
+  require 'plugins.lspconfig',
 
   -- Autocompletion
   require 'plugins.cmp',
-  
+
   -- close {, (, ", ', when opening them
   require 'plugins.auto_pairs',
-  
+
   -- rust Cargo toml crate addons
   require 'plugins.crates',
 
@@ -66,7 +67,7 @@ require('lazy').setup({
   require 'plugins.gitsigns',
 
   require 'plugins.theme',
-  
+
   -- Set lualine as statusline
   require 'plugins.lualine',
 
@@ -197,6 +198,10 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<leader>x', "<cmd> bdelete <CR>", { desc = "Close the current buffer" })
 vim.keymap.set('n', '<TAB>', "<cmd> bnext <CR>", { desc = "Switch to the next buffer" })
 vim.keymap.set('n', '<S-TAB>', "<cmd> bprevious <CR>", { desc = "Switch to the previous buffer" })
+vim.api.nvim_set_keymap('i', '<C-H>', '<C-W>', { noremap = false })
+vim.keymap.set('i', '<C-Del>', '<cmd> norm! de <CR><cmd>  l <CR>', { noremap = false })
+vim.keymap.set('i', '<C-z>', '<cmd>:undo<CR>')
+vim.keymap.set('i', '<C-y>', '<cmd>:redo<CR>') 
 
 ---- telescope keymaps
 require("keymaps.telescope")
